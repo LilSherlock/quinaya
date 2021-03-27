@@ -26,7 +26,7 @@
             <img class="mySlides frame" src="/assets/image3.jpg" style="width:100%">
         </div>
         <br>
-        <div class="quotesMenu">
+        <div class="quotesMenu" id="publicQuote">
             <div class="title-quote">
                 <h2>Quote of the day</h2>
                 <div class="quote">
@@ -36,7 +36,7 @@
             <div class="publicQuote">
                 <div class="counts">{{$counter}} times</div>
                 <div class="button-Quote">
-                    <button type="submit">Actualizar</button>
+                    <button type="submit" id="button-update">Actualizar</button>
                 </div>
             </div>
         </div>
@@ -52,12 +52,14 @@
                 <div class="publicQuote">
                     <div class="counts">{{$newCounter}} times </div>
                     <div class="button-Quote">
-                        <button type="submit">Actualizar</button>
+                        <button type="submit" id="button-update">Actualizar</button>
                     </div>
                 </div>
             </div>
             <br>
         </div>
+        @else
+    </div>
         @endif
         <br>
         <h1 style="text-align:center; color:#ffeba7"> All Quotes printed </h1>
@@ -92,3 +94,4 @@
       setTimeout(carousel, 8000); 
     }
 </script>
+

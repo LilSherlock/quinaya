@@ -35,5 +35,8 @@ class quoteController extends Controller
         );
         return $x;
     }
-
+    static function getAllQuotes() {
+	    $allQuotes = Quotes::all();
+	    return json_decode($allQuotes);
+    }
 }

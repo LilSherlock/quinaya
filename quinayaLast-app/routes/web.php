@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\quoteController;
+use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,11 +18,15 @@ use App\Http\Controllers\quoteController;
 Route::get('/', function () {
     $data = quoteController::getQuote();
     $newData = quoteController::getQuote();
-    return view('dashboard', ['quote' => $data['quote'], 'newdata'=>$newData['quote'], 'counter'=>$data['counter'], 'newCounter' => $newData['counter']]);
+    $AllQuotes = quoteController::getAllQuotes();
+    //dd($AllQuotes);
+    return view('dashboard', ['quote' => $data['quote'], 'newdata'=>$newData['quote'], 'counter'=>$data['counter'], 'newCounter' => $newData['counter'], 'allQuotes' => $AllQuotes]);
 
 })->name('dashboard');
 
-
-
+Route::get('/user/{id}', function ($id) {
+    $data = userController::getUser($id);
+    return $data;
+});
 
 require __DIR__.'/auth.php';

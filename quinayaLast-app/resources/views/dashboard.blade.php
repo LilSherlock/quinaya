@@ -56,7 +56,25 @@
                     </div>
                 </div>
             </div>
+            <br>
+        </div>
         @endif
+        <br>
+        <h1 style="text-align:center; color:#ffeba7"> All Quotes printed </h1>
+        @foreach($allQuotes as $dbquote)
+        <div class="allquotes">
+            <div class="quotesMenu" style="display:flex; justify-content: space-between; color: #ffeba7;">
+                    <div class="quote" style=" width: 80%">
+                        {{$dbquote->quotes}}
+                    </div>
+                    <div class="counter" style="border-bottom: 1px solid #ffeba7">
+                        {{$dbquote->counter}}
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        @endforeach
 </div>
 <script>
     var myIndex = 0;

@@ -38,6 +38,9 @@
                 <h1 class="center-block title">Registro</h1>
                 <div class="input-text">
                     <div class="center-block">
+                        <input type="text" name="name" value="{{ old('name') }}" placeholder="name" class="input-control" >
+                    </div>
+                    <div class="center-block">
                         <input type="text" name="email" value="{{ old('email') }}" placeholder="email" class="input-control" >
                     </div>
                     <div class="center-block">
